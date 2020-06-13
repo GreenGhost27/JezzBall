@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>D3 JezzBall</title>
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    rect {
+      fill: none;
+      pointer-events: all;
+    }
+
+    .smallTextStroke {
+      font-family: sans-serif;
+      font-size: 12px;
+      fill: none;
+      stroke: black;
+      stroke-width: 1px;
+    }
+
+    .smallText {
+      font-family: sans-serif;
+      font-size: 12px;
+      fill: white;
+    }
+
+    .bigTextStroke {
+      font-family: sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      fill: none;
+      stroke: black;
+      stroke-width: 4px;
+    }
+
+    .bigText {
+      font-family: sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      fill: white;
+    }
+
+    .cell {}
+
+    .cell.wall {
+      fill: #000;
+      stroke: #000;
+    }
+
+    .cell.air {
+      fill: #ddd;
+      stroke: #999;
+    }
+
+    .cell.blue {
+      stroke: blue;
+      stroke-opacity: .8;
+    }
+
+    .cell.red {
+      stroke: red;
+      stroke-opacity: .8;
+    }
+
+    .ball {
+      fill: #f00;
+      fill-opacity: 1;
+      stroke: #333;
+      stroke-opacity: .5;
+    }
+
+    .builder.head {
+      stroke: #333;
+      stroke-opacity: .5;
+    }
+
+    .builder.blue {
+      fill: blue;
+    }
+
+    .builder.red {
+      fill: red;
+    }
+
+    .builder.tail {
+      fill-opacity: .4;
+    }
+
+    .switch {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 0px;
+      width: 20px;
+      height: 20px;
+    }
+
+    #nextLevelButton,
+    #playAgainButton {
+      position: absolute;
+      width: 100px;
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+</html>
+
+<body>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <form>
+    <input id="switchOrientationButton1" class="switch" type="button" value="V" />
+    <input id="switchOrientationButton2" class="switch" type="button" value="V" />
+    <input id="switchOrientationButton3" class="switch" type="button" value="V" />
+    <input id="switchOrientationButton4" class="switch" type="button" value="V" />
+    <input id="nextLevelButton" type="button" value="Next level" />
+    <input id="playAgainButton" type="button" value="Play again" />
+  </form>
+  <script type="text/javascript" src="jezzball.js"></script>
+  <script>
+    d3.select("body").append("p").style("color","red").text("JezzBall D3JS");
+  </script>
+  <script>
+    // var dataArray = [20, 40, 50];
+    // var canvas = d3.select("body").append("svg").attr("width", 500).attr("height", 500).style("background-color","aqua");
+    // var circle = canvas.append("circle").attr("cx", 250).attr("cy", 250).attr("r", 50).attr("fill", "red");
+    // var rect = canvas.append("rect").attr("width", 100).attr("height", 50).attr("fill", "blue");
+    // var line = canvas.append("line").attr("x1", 0).attr("y1", 100).attr("x2", 400).attr("y1", 400).attr("stroke", "green").attr("stroke-width", 10);
+    // var bars = canvas.selectAll("rect");...
+  </script>
+  <div class="gist-readme" data-key="README.md">
+    <p><a href="http://en.wikipedia.org/wiki/JezzBall">JezzBall</a> The goal is to fill at least 75% of the room.</p>
+    <p>Click on any corner button or use mouse wheel to change the orientation of the wall builder.</p>
+    <p>For more detailed instructions, see <a href="http://uk.ign.com/faqs/2001/jezzball-walkthroughfaq-223013">JezzBall Walkthrough/FAQ page on IGN</a>.</p>
+  </div>
+</body>
+
+</html>
